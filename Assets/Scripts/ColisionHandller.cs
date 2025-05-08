@@ -11,7 +11,7 @@ public class ColisionHandller : MonoBehaviour
     [SerializeField] ParticleSystem successParticles;
     [SerializeField] ParticleSystem crashParticles;
     bool isControllable = true;
-    bool isColidable = true;
+
 
     AudioSource audioSource;
     void Start()
@@ -25,18 +25,14 @@ public class ColisionHandller : MonoBehaviour
     }
     void RespondToDebugKeys()
     {
-        if (Keyboard.current.lKey.wasPressedThisFrame)
+        if (Keyboard.current.lKey.isPressed)
         {
             LoadNextLevel();
         }
-
     }
     private void OnCollisionEnter(Collision other)
     {
         if (!isControllable)
-        {
-            return;
-        }
         {
             return;
         }
