@@ -10,6 +10,10 @@ public class Movement : MonoBehaviour
     [SerializeField] float thrustStrenght = 100f;
     [SerializeField] float rotationStrenght = 100f;
 
+    [SerializeField] ParticleSystem MainBoosterFX;
+    [SerializeField] ParticleSystem LeftBoosterFX;
+    [SerializeField] ParticleSystem RightBoosterFX;
+
     [SerializeField] AudioClip mainEngine;
 
 
@@ -40,32 +44,75 @@ public class Movement : MonoBehaviour
     {
         if (thrust.IsPressed())
         {
-            rb.AddRelativeForce(Vector3.up * thrustStrenght * Time.fixedDeltaTime);
-            if (!rocketThrust.isPlaying)
-            {
-                rocketThrust.PlayOneShot(mainEngine);
-            }
-            
+            StartThrusting();
+
         }
         else
         {
-            rocketThrust.Stop();
+            StopThrusting();
         }
     }
+
+    private void StartThrusting()
+    {
+        rb.AddRelativeForce(Vector3.up * thrustStrenght * Time.fixedDeltaTime);
+        if (!rocketThrust.isPlaying)
+        {
+            rocketThrust.PlayOneShot(mainEngine);
+        }
+        if (!MainBoosterFX.isPlaying)
+        {
+            MainBoosterFX.Play();
+        }
+    }
+    private void StopThrusting()
+    {
+        rocketThrust.Stop();
+        MainBoosterFX.Stop();
+    }
+
+    
 
     private void ProcessRotation()
     {
         float rotationInput = rotation.ReadValue<float>();
         if(rotationInput < 0)
         {
-            AplyRotation(rotationStrenght);
+            StartRightRotation();
         }
         else  if(rotationInput > 0)
         {
-            AplyRotation(-rotationStrenght);
+            StartLeftRotation();
+        }
+        else
+        {
+            StopAllRotation();
         }
     }
 
+    private void StartLeftRotation()
+    {
+        AplyRotation(-rotationStrenght);
+        if (!LeftBoosterFX.isPlaying)
+        {
+            RightBoosterFX.Stop();
+            LeftBoosterFX.Play();
+        }
+    }
+    private void StartRightRotation()
+    {
+        AplyRotation(rotationStrenght);
+        if (!RightBoosterFX.isPlaying)
+        {
+            LeftBoosterFX.Stop();
+            RightBoosterFX.Play();
+        }
+    }
+    private void StopAllRotation()
+    {
+        LeftBoosterFX.Stop();
+        RightBoosterFX.Stop();
+    }
     private void AplyRotation(float rotationThisFrame)
     {
         rb.freezeRotation = true;
