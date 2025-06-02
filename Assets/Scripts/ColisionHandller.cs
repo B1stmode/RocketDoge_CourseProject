@@ -21,14 +21,7 @@ public class ColisionHandller : MonoBehaviour
 
     void Update()
     {
-        RespondToDebugKeys();
-    }
-    void RespondToDebugKeys()
-    {
-        if (Keyboard.current.lKey.isPressed)
-        {
-            LoadNextLevel();
-        }
+        
     }
     private void OnCollisionEnter(Collision other)
     {
