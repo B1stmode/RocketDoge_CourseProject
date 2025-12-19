@@ -9,10 +9,34 @@ using TMPro;
 public class ButtonsFunction : MonoBehaviour
 {
     public AudioMixer audioMixer;
-    public void StartGame()
+
+    public void LoadFirst()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("First");
     }
+    public void LoadSecond()
+    {
+        SceneManager.LoadScene("Second");
+    }
+
+    public void LoadThird()
+    {
+        SceneManager.LoadScene("Last");
+    }
+
+    public void LoadFourth()
+    {
+        SceneManager.LoadScene("The site");
+    }
+    public void LoadFifth()
+    {
+        SceneManager.LoadScene("Final push");
+    }
+    public void LoadSixth()
+    {
+        SceneManager.LoadScene("Second");
+    }
+
 
     public void QuitGame()
     {
