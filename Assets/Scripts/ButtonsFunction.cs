@@ -12,16 +12,16 @@ public class ButtonsFunction : MonoBehaviour
 
     public void LoadFirst()
     {
-        SceneManager.LoadScene("First");
+        SceneManager.LoadScene("Ground-0");
     }
     public void LoadSecond()
     {
-        SceneManager.LoadScene("Second");
+        SceneManager.LoadScene("Pipeworks");
     }
 
     public void LoadThird()
     {
-        SceneManager.LoadScene("Last");
+        SceneManager.LoadScene("The hook");
     }
 
     public void LoadFourth()
@@ -34,7 +34,12 @@ public class ButtonsFunction : MonoBehaviour
     }
     public void LoadSixth()
     {
-        SceneManager.LoadScene("Second");
+        SceneManager.LoadScene("Ascent");
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("Main menu");
     }
 
 
