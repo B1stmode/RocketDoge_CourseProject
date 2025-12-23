@@ -13,7 +13,6 @@ public class ColisionHandller : MonoBehaviour
     [SerializeField] ParticleSystem crashParticles;
     bool isControllable = true;
 
-
     AudioSource audioSource;
     void Start()
     {
@@ -44,6 +43,7 @@ private void OnCollisionEnter(Collision other)
                 break; 
             default: 
                 StartCrashSequence();
+                DeathCount.instance.AddPoint();
                 break;
         }
     }

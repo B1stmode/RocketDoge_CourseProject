@@ -40,6 +40,7 @@ public class ButtonsFunction : MonoBehaviour
     public void LoadMenu()
     {
         SceneManager.LoadScene("Main menu");
+        DeathCount.instance.ResetCounter();
     }
 
 
