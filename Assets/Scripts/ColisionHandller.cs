@@ -4,8 +4,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
+
 public class ColisionHandller : MonoBehaviour
 {
+    private PlayerControls inputActions;
+
     [SerializeField] float levelLoadDelay = 2f;
     [SerializeField] AudioClip successSFX;
     [SerializeField] AudioClip crashSFX;
@@ -14,17 +17,36 @@ public class ColisionHandller : MonoBehaviour
     bool isControllable = true;
 
     AudioSource audioSource;
+
+    private void Awake()
+    {
+        inputActions = new PlayerControls();
+    }
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
+    private void OnEnable()
+    {
+        inputActions.Player.Enable();
+        inputActions.Player.Restart.performed += OnRestartPerformed;
+    }
+
+    private void OnDisable()
+    {
+        inputActions.Player.Restart.performed -= OnRestartPerformed;
+        inputActions.Player.Disable();
+    }
+
+    private void OnRestartPerformed(InputAction.CallbackContext ctx)
+    {
+        ReloadLevel();
+    }
+
     void Update()
     {
-        if (Input.GetKey(KeyCode.R))
-        {
-            ReloadLevel();
-        }
+  
     }
 private void OnCollisionEnter(Collision other)
     {

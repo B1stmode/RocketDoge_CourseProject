@@ -9072,6 +9072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonsFunction
   audioMixer: {fileID: 24100000, guid: c6bbd01aee3df7647b335e7863734184, type: 2}
+  pauseMenuUI: {fileID: 0}
 --- !u!1 &1941624898
 GameObject:
   m_ObjectHideFlags: 0
@@ -9469,7 +9470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: -1
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
