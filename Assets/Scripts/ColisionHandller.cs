@@ -89,4 +89,4 @@ public class ColisionHandller : MonoBehaviour
         }
         SceneManager.LoadScene(nextScene);
     }
-}
+}                                                                                                                                                             

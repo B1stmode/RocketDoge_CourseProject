@@ -48,6 +48,13 @@ public class ButtonsFunction : MonoBehaviour
         DeathCount.instance.ResetCounter();
     }
 
+    public void ReloadLevel()
+    {
+        Resume();
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentScene);
+    }
+
 
     public void QuitGame()
     {
