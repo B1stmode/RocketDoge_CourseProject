@@ -1,5 +1,8 @@
 # 🚀 Rocket Dodge
 
+🔗 Game Link:
+👉 https://b1stmode.itch.io/rocket-dodge-gamedevtv-course-project
+
 Rocket Dodge is a precision-based physics game built in Unity, where control, timing, and momentum determine whether you escape — or crash underground.
 
 The project was created as part of a Unity course and later expanded with additional systems, polish, and gameplay improvements.
