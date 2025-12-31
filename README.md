@@ -96,5 +96,3 @@ This project was originally started as part of the following Unity course:
 
 - **Unity Complete 3D Course** – GameDev.tv  
   [https://www.gamedev.tv/courses/unity-complete-3d](https://www.udemy.com/course/unitycourse2/?couponCode=ACCAGE0923)
-
-All course-provided content was later extended and modified with my own logic, features, and gameplay changes.
